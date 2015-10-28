@@ -7,7 +7,7 @@ import pathlib
 import sys
 import unittest
 
-from pfasst_py.util.fileutils import get_exe_path
+from pfasst_py.util.fileutils import get_exe_path, get_directory_path
 
 
 class GetExePathTest(unittest.TestCase):
@@ -26,3 +26,19 @@ class GetExePathTest(unittest.TestCase):
     def test_fails_for_non_existent_absolute_path(self):
         with self.assertRaises(ValueError):
             get_exe_path('/not/an/existent/absolute/path')
+
+
+class GetDirectoryPathTest(unittest.TestCase):
+    def test_takes_absolute_paths(self):
+        self.assertTrue(get_directory_path(os.getcwd()).samefile(os.getcwd()))
+
+    def test_converts_relative_paths(self):
+        self.assertTrue(get_directory_path('.').samefile(os.getcwd()))
+
+    def test_existence_of_directory(self):
+        with self.assertRaises(ValueError):
+            get_directory_path('/not/a/dir')
+
+    def test_type_of_directory(self):
+        with self.assertRaises(ValueError):
+            get_directory_path(sys.executable)

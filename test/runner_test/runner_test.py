@@ -12,13 +12,14 @@ from pfasst_py.util.parameter import ValueParameter
 class RunnerTest(unittest.TestCase):
     def setUp(self):
         self.obj = Runner(sys.executable)
+        self.obj = Runner(exe=sys.executable)
 
     def test_takes_executable(self):
         self.assertTrue(self.obj.exe.samefile(sys.executable))
 
     def test_ensures_presents_of_executable(self):
         with self.assertRaises(ValueError):
-            Runner('not/an/exe')
+            Runner(exe='not/an/exe')
 
     def test_builds_cmd_line_without_args(self):
         self.assertEqual(self.obj.build_cmd_line(), sys.executable)
@@ -43,3 +44,12 @@ class RunnerTest(unittest.TestCase):
     def test_returns_list_of_stdout_lines(self):
         output = self.obj.run(['-c "import sys; print(sys.version_info)"'])
         self.assertEqual(output, [str(sys.version_info)])
+
+    def test_checks_return_status(self):
+        with self.assertRaises(RuntimeError):
+            Runner(exe='exit').run('1')
+
+    def test_checks_stderr(self):
+        with self.assertLogs('pfasst_py', level='WARNING') as cptr:
+            Runner(exe='echo').run('"Hello" >&2')
+        self.assertRegex(''.join(cptr.output), 'Process put something on stderr:')

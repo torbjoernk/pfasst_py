@@ -12,12 +12,12 @@ _log = logging.getLogger(__name__)
 
 
 class Runner(ParamsMixin):
-    def __init__(self, exe=None):
+    def __init__(self, *args, **kwargs):
         super(Runner, self).__init__()
         self._exe = None
 
-        if exe:
-            self.exe = exe
+        if 'exe' in kwargs:
+            self.exe = kwargs['exe']
 
     def build_cmd_line(self, additional_args=None):
         if self.exe:

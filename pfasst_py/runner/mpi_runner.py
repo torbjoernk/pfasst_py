@@ -11,8 +11,8 @@ _log = logging.getLogger(__name__)
 
 
 class MPIRunner(Runner, WrapperMixin):
-    def __init__(self, exe=None):
-        super(MPIRunner, self).__init__(exe)
+    def __init__(self, *args, **kwargs):
+        super(MPIRunner, self).__init__(*args, **kwargs)
         self._np = None
 
     def build_cmd_line(self, args=None):
