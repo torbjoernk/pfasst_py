@@ -95,6 +95,18 @@ class ToleranceParamsMixin(ParamsMixin):
         return self._params['rel_res_tol']
 
 
+class MPIParamsMixin(ParamsMixin):
+    def __init__(self):
+        super(MPIParamsMixin, self).__init__()
+        self._params.update({
+            'np': ValueParameter(long='np')
+        })
+
+    @property
+    def np(self):
+        return self._params['np']
+
+
 class SDCParamsMixin(GlobalParamsMixin, DurationParamsMixin, QuadratureParamsMixin, ToleranceParamsMixin):
     def __init__(self):
         super(SDCParamsMixin, self).__init__()

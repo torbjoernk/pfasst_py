@@ -6,7 +6,8 @@ import unittest
 
 from pfasst_py.util.parameter import BoolParameter, ValueParameter
 from pfasst_py.runner.parameters import ParamsMixin, GlobalParamsMixin, DurationParamsMixin, QuadratureParamsMixin, \
-    ToleranceParamsMixin, SDCParamsMixin, MLSDCParamsMixin, PfasstParamsMixin, FaultyPfasstParamsMixin
+    ToleranceParamsMixin, MPIParamsMixin, \
+    SDCParamsMixin, MLSDCParamsMixin, PfasstParamsMixin, FaultyPfasstParamsMixin
 
 
 class GlobalParamsMixinTest(unittest.TestCase):
@@ -76,6 +77,17 @@ class ToleranceParamsMixinTest(unittest.TestCase):
 
     def test_has_prop_rel_res_tol(self):
         self.assertTrue(self.obj.rel_res_tol, ValueParameter)
+
+
+class MPIParamsTest(unittest.TestCase):
+    def setUp(self):
+        self.obj = MPIParamsMixin()
+
+    def test_is_wrapper_mixin(self):
+        self.assertTrue(issubclass(MPIParamsMixin, ParamsMixin))
+
+    def test_has_prop_num_procs(self):
+        self.assertIsInstance(self.obj.np, ValueParameter)
 
 
 class SDCParamsMixinTest(unittest.TestCase):

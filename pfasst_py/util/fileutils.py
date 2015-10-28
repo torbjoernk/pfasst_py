@@ -31,11 +31,7 @@ def get_exe_path(executable):
                 _log.error("Cannot resolve executable '%s': %s" % (executable, out))
                 raise ValueError("Cannot resolve executable '%s': %s" % (executable, out))
         else:
-            try:
-                path = pathlib.Path(exepath)
-            except TypeError:
-                _log.error("Cannot resolve executable via PATH: %s" % executable)
-                raise ValueError("Cannot resolve executable via PATH: %s" % executable)
+            path = pathlib.Path(exepath)
     else:
         _log.debug("resolving relative path of executable")
         try:

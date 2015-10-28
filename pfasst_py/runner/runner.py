@@ -5,54 +5,35 @@
 import logging
 import subprocess as sp
 
-from pfasst_py.util.fileutils import get_exe_path
-from pfasst_py.runner.parameters import ParamsMixin
+from pfasst_py.runner.executable import Executable
 
 _log = logging.getLogger(__name__)
 
 
-class Runner(ParamsMixin):
+class Runner(object):
     def __init__(self, *args, **kwargs):
-        super(Runner, self).__init__()
         self._exe = None
 
-        if 'exe' in kwargs:
-            self.exe = kwargs['exe']
-
-    def build_cmd_line(self, additional_args=None):
+    def run(self, additional_args):
         if self.exe:
-            line = self.exe.as_posix()
+            cmd = self.exe.build_cmd_line(additional_args=additional_args)
 
-            params = self.params_to_line()
-            if params != "":
-                line += " " + params
+            try:
+                _log.info("Executing '%s' ..." % cmd)
+                proc = sp.run(cmd, stdout=sp.PIPE, stderr=sp.PIPE, shell=True, universal_newlines=True, check=True)
+            except sp.CalledProcessError as err:
+                _log.error("Command '%s' failed: %s" % (cmd, err))
+                raise RuntimeError("Command '%s' failed: %s" % (cmd, err))
 
-            if additional_args:
-                if not isinstance(additional_args, (tuple, list)):
-                    additional_args = (additional_args, )
-                line += " " + ' '.join(str(a) for a in additional_args)
+            _log.info("Finished.")
 
-            return line
+            if proc.stderr != "":
+                _log.warning("Process put something on stderr: %s" % proc.stderr)
+
+            return proc.stdout.strip().split('\n')
         else:
-            _log.error("No executable defined.")
-            raise RuntimeError("No executable defined.")
-
-    def run(self, additional_args=None):
-        cmd = self.build_cmd_line(additional_args)
-
-        try:
-            _log.info("Executing '%s' ..." % cmd)
-            proc = sp.run(cmd, stdout=sp.PIPE, stderr=sp.PIPE, shell=True, universal_newlines=True, check=True)
-        except sp.CalledProcessError as err:
-            _log.error("Command '%s' failed: %s" % (cmd, err))
-            raise RuntimeError("Command '%s' failed: %s" % (cmd, err))
-
-        _log.info("Finished.")
-
-        if proc.stderr != "":
-            _log.warning("Process put something on stderr: %s" % proc.stderr)
-
-        return proc.stdout.strip().split('\n')
+            _log.error("No executable given.")
+            raise RuntimeError("No executable given.")
 
     @property
     def exe(self):
@@ -60,4 +41,8 @@ class Runner(ParamsMixin):
 
     @exe.setter
     def exe(self, value):
-        self._exe = get_exe_path(value)
+        if isinstance(value, Executable):
+            self._exe = value
+        else:
+            _log.error("Runner requires an Executable: %s" % type(Executable))
+            raise ValueError("Runner requires an Executable: %s" % type(Executable))

@@ -27,6 +27,10 @@ class GetExePathTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             get_exe_path('/not/an/existent/absolute/path')
 
+    def test_fails_for_non_resolvable_relative_path(self):
+        with self.assertRaises(ValueError):
+            get_exe_path('../not/a/path')
+
 
 class GetDirectoryPathTest(unittest.TestCase):
     def test_takes_absolute_paths(self):
