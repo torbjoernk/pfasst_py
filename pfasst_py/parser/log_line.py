@@ -19,10 +19,10 @@ class LogLine(object):
         'rank': RankComponent,
         'message': MessageComponent
     }
-    LINE_MATCHER_MPI = re.compile("^%s\s\[%s\s*,\s%s\s*,\s%s\s*\]\s%s$" \
+    LINE_MATCHER_MPI = re.compile("^%s\s\[%s\s*,\s%s\s*,\s%s\s*\]\s%s$"
                                   % (TimestampComponent.REGEX, LoggerComponent.REGEX, LevelComponent.REGEX,
                                      RankComponent.REGEX, MessageComponent.REGEX))
-    LINE_MATCHER_NO_MPI = re.compile("^%s\s\[%s\s*,\s%s\s*\]\s%s$" \
+    LINE_MATCHER_NO_MPI = re.compile("^%s\s\[%s\s*,\s%s\s*\]\s%s$"
                                      % (TimestampComponent.REGEX, LoggerComponent.REGEX, LevelComponent.REGEX,
                                         MessageComponent.REGEX))
 
@@ -64,10 +64,12 @@ class LogLine(object):
             self._parse()
 
     def _parse(self):
+        # noinspection PyTypeChecker
         mpi_match = self.LINE_MATCHER_MPI.match(self.raw)
         if mpi_match:
             self._populate_components(mpi_match.groupdict())
         else:
+            # noinspection PyTypeChecker
             nompi_match = self.LINE_MATCHER_NO_MPI.match(self.raw)
             if nompi_match:
                 self._populate_components(nompi_match.groupdict())

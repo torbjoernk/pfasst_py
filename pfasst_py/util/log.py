@@ -5,7 +5,6 @@
 import logging
 import logging.config
 
-DEFAULT_LOG_CONFIG = {}
 DEFAULT_LOG_CONFIG = {
     'version': 1,
     'formatters': {

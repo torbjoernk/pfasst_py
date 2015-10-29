@@ -24,7 +24,7 @@ class RunnerTest(unittest.TestCase):
     def test_runs_with_arbitrary_arguments(self):
         self.obj.exe = Executable(exe=sys.executable)
         with self.assertLogs('pfasst_py') as cptr:
-            output = self.obj.run(['-c "import sys; print(sys.version_info)"'])
+            self.obj.run(['-c "import sys; print(sys.version_info)"'])
         self.assertRegex(' '.join(cptr.output), 'Executing')
         self.assertRegex(' '.join(cptr.output), 'Finished')
 

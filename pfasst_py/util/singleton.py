@@ -46,6 +46,7 @@ class Singleton:
         try:
             return self._instance
         except AttributeError:
+            # noinspection PyAttributeOutsideInit
             self._instance = self._decorated()
             return self._instance
 

@@ -23,9 +23,6 @@ class Parser(object):
 
             for line in lines:
                 self.lines.append(LogLine(line))
-        else:
-            _log.error("Parser requires lines: %s" % type(lines))
-            raise ValueError("Parser requires lines: %s" % type(lines))
 
     @property
     def lines(self):
