@@ -28,10 +28,10 @@ class RunnerTest(unittest.TestCase):
         self.assertRegex(' '.join(cptr.output), 'Executing')
         self.assertRegex(' '.join(cptr.output), 'Finished')
 
-    def test_returns_list_of_stdout_lines(self):
+    def test_stores_output(self):
         self.obj.exe = Executable(exe=sys.executable)
-        output = self.obj.run(['-c "import sys; print(sys.version_info)"'])
-        self.assertEqual(output, [str(sys.version_info)])
+        self.obj.run(['-c "import sys; print(sys.version_info)"'])
+        self.assertEqual(self.obj.stdout_lines, [str(sys.version_info)])
 
     def test_checks_return_status(self):
         self.obj.exe = Executable(exe='exit')

@@ -17,6 +17,7 @@ exe.abs_res_tol.value = 1e-10
 exe.dt.value = 0.05
 exe.tend.value = 0.2
 exe.num_iters.value = 10
+exe.nocolor.toggle()
 
 print(exe.build_cmd_line())
 
@@ -32,3 +33,5 @@ print(wrapper.build_cmd_line())
 runner = Runner()
 runner.exe = wrapper
 runner.run()
+
+print(runner.stdout_lines)

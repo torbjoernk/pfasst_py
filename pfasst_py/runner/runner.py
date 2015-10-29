@@ -14,6 +14,7 @@ _log = logging.getLogger(__name__)
 class Runner(object):
     def __init__(self, *args, **kwargs):
         self._exe = None
+        self._proc = None
 
     def run(self, additional_args=None, cwd=None):
         if self.exe:
@@ -24,17 +25,15 @@ class Runner(object):
 
             try:
                 _log.info("Executing '%s' ..." % cmd)
-                proc = sp.run(cmd, cwd=cwd, stdout=sp.PIPE, stderr=sp.PIPE, shell=True, universal_newlines=True, check=True)
+                self._proc = sp.run(cmd, cwd=cwd, stdout=sp.PIPE, stderr=sp.PIPE, shell=True, universal_newlines=True, check=True)
             except sp.CalledProcessError as err:
                 _log.error("Command '%s' failed: %s" % (cmd, err))
                 raise RuntimeError("Command '%s' failed: %s" % (cmd, err))
 
             _log.info("Finished.")
 
-            if proc.stderr != "":
-                _log.warning("Process put something on stderr: %s" % proc.stderr)
-
-            return proc.stdout.strip().split('\n')
+            if self.proc.stderr != "":
+                _log.warning("Process put something on stderr: %s" % self.proc.stderr)
         else:
             _log.error("No executable given.")
             raise RuntimeError("No executable given.")
@@ -50,3 +49,14 @@ class Runner(object):
         else:
             _log.error("Runner requires an Executable: %s" % type(Executable))
             raise ValueError("Runner requires an Executable: %s" % type(Executable))
+
+    @property
+    def proc(self):
+        return self._proc
+
+    @property
+    def stdout_lines(self):
+        if self.proc:
+            return self.proc.stdout.strip().split('\n')
+        else:
+            return None
