@@ -4,7 +4,7 @@
 """
 import logging
 
-from pfasst_py.examples.example import Example
+from pfasst_py.runner.executable import Executable
 from pfasst_py.runner.parameters import ParamsMixin
 from pfasst_py.util.parameter import ValueParameter
 
@@ -28,6 +28,6 @@ class AdvecDiffParamsMixin(ParamsMixin):
         return self._params['vel']
 
 
-class AdvecDiff(Example, AdvecDiffParamsMixin):
-    def __init__(self):
-        super(AdvecDiff, self).__init__()
+class AdvecDiffExecutable(Executable, AdvecDiffParamsMixin):
+    def __init__(self, *args, **kwargs):
+        super(AdvecDiffExecutable, self).__init__(*args, **kwargs)
