@@ -1,0 +1,62 @@
+22:10:08,00 [DEFAULT   , DEBUG] logging.hpp:367 initializing custom logger 'CONTROL' as 'CONTROL'
+22:10:08,01 [DEFAULT   , DEBUG] logging.hpp:367 initializing custom logger 'COMM' as 'COMM'
+22:10:08,01 [DEFAULT   , DEBUG] logging.hpp:367 initializing custom logger 'SWEEPER' as 'SWEEPER'
+22:10:08,01 [DEFAULT   , DEBUG] logging.hpp:367 initializing custom logger 'TRANS' as 'TRANS'
+22:10:08,01 [DEFAULT   , DEBUG] logging.hpp:367 initializing custom logger 'ENCAP' as 'ENCAP'
+22:10:08,02 [DEFAULT   , DEBUG] logging.hpp:367 initializing custom logger 'QUAD' as 'QUAD'
+22:10:08,02 [DEFAULT   , DEBUG] logging.hpp:367 initializing custom logger 'USER' as 'USER'
+22:10:08,02 [DEFAULT   , INFO ] PFASST++ version v0.5.0-rc1-171-g633b1ba-dirty
+22:10:08,02 [DEFAULT   , DEBUG] logging.hpp:367 initializing custom logger 'SDC' as 'SDC'
+22:10:08,03 [SWEEPER   , INFO ] using as quadrature: Gauss-Radau (right) on [0.0, 1.0] with 3 nodes and an expected error of 2.77556e-17
+22:10:08,03 [SWEEPER   , INFO ] using as quadrature: Gauss-Radau (right) on [0.0, 1.0] with 3 nodes and an expected error of 2.77556e-17
+22:10:08,03 [SWEEPER   , INFO ] using as quadrature: Gauss-Radau (right) on [0.0, 1.0] with 3 nodes and an expected error of 2.77556e-17
+22:10:08,03 [SDC       , INFO ] 
+22:10:08,03 [SDC       , INFO ] Sequential SDC
+22:10:08,03 [SDC       , INFO ]   t0:        0.00000
+22:10:08,03 [SDC       , INFO ]   dt:        0.05000
+22:10:08,03 [SDC       , INFO ]   T:         0.05000
+22:10:08,03 [SDC       , INFO ]   num steps: 1
+22:10:08,03 [SDC       , INFO ]   max iter:  5
+22:10:08,03 [SDC       , INFO ] 
+22:10:08,03 [SDC       , INFO ] Time Step 1 of 1
+22:10:08,03 [SDC       , INFO ] 
+22:10:08,03 [SDC       , INFO ] SDC Prediction step
+22:10:08,03 [SWEEPER   , INFO ] Predicting from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
+22:10:08,03 [SWEEPER   , WARN ] No residual tolerances set. Thus skipping convergence check.
+22:10:08,03 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 2.26934e-02      |rel residual| = 3.27686e-02      |abs error| = 1.87091e-02      |rel error| = 2.70154e-02
+22:10:08,03 [SDC       , INFO ] 
+22:10:08,03 [SDC       , INFO ] Iteration 1
+22:10:08,03 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
+22:10:08,04 [SWEEPER   , WARN ] No residual tolerances set. Thus skipping convergence check.
+22:10:08,04 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 1.43951e-03      |rel residual| = 2.13269e-03      |abs error| = 1.15129e-03      |rel error| = 1.70568e-03
+22:10:08,04 [SDC       , INFO ] 
+22:10:08,04 [SDC       , INFO ] Iteration 2
+22:10:08,04 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
+22:10:08,04 [SWEEPER   , WARN ] No residual tolerances set. Thus skipping convergence check.
+22:10:08,04 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 8.30761e-05      |rel residual| = 1.23279e-04      |abs error| = 6.41265e-05      |rel error| = 9.51587e-05
+22:10:08,04 [SDC       , INFO ] 
+22:10:08,04 [SDC       , INFO ] Iteration 3
+22:10:08,04 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
+22:10:08,04 [SWEEPER   , WARN ] No residual tolerances set. Thus skipping convergence check.
+22:10:08,04 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 4.18922e-06      |rel residual| = 6.21704e-06      |abs error| = 3.33791e-06      |rel error| = 4.95365e-06
+22:10:08,04 [SDC       , INFO ] 
+22:10:08,04 [SDC       , INFO ] Iteration 4
+22:10:08,04 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
+22:10:08,04 [SWEEPER   , WARN ] No residual tolerances set. Thus skipping convergence check.
+22:10:08,04 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 1.62371e-07      |rel residual| = 2.40969e-07      |abs error| = 4.30307e-07      |rel error| = 6.38602e-07
+22:10:08,04 [SDC       , INFO ] 
+22:10:08,04 [SDC       , INFO ] Iteration 5
+22:10:08,04 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
+22:10:08,04 [SWEEPER   , WARN ] No residual tolerances set. Thus skipping convergence check.
+22:10:08,04 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 1.77604e-09      |rel residual| = 2.63576e-09      |abs error| = 3.32189e-07      |rel error| = 4.92989e-07
+22:10:08,04 [SDC       , WARN ] Not advancing to next iteration (6) as it will exceed maximum number of allowed iterations (5)
+22:10:08,04 [SDC       , WARN ] Sweeper has not yet converged and no more iterations to do.
+22:10:08,04 [SWEEPER   , INFO ] number function evaluations:
+22:10:08,04 [SWEEPER   , INFO ]   expl:        24
+22:10:08,04 [SWEEPER   , INFO ]   impl:        0
+22:10:08,04 [SWEEPER   , INFO ]   impl solves: 18
+22:10:08,04 [SDC       , INFO ] Number Iterations: 5
+22:10:08,04 [SDC       , INFO ] Absolute Residual: 1.44668e-08
+22:10:08,04 [SDC       , INFO ] Relative Residual: 1.86621e-08
+22:10:08,04 [SDC       , INFO ] End time point reached: 0.05000
+22:10:08,04 [SDC       , INFO ] Run Finished.

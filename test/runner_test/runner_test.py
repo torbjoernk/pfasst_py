@@ -33,6 +33,9 @@ class RunnerTest(unittest.TestCase):
         self.obj.run(['-c "import sys; print(sys.version_info)"'])
         self.assertEqual(self.obj.stdout_lines, [str(sys.version_info)])
 
+    def test_no_output_stored_if_not_run(self):
+        self.assertIsNone(self.obj.stdout_lines)
+
     def test_checks_return_status(self):
         self.obj.exe = Executable(exe='exit')
         with self.assertRaises(RuntimeError):

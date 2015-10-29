@@ -3,7 +3,18 @@
 .. moduleauthor:: Torbjörn Klatt <t.klatt@fz-juelich.de>
 """
 import os
+import pathlib
 import tempfile
+
+
+def read_data_file(filename):
+    filepath = pathlib.Path(__file__).absolute().parent /'data' / filename
+    if filepath.exists():
+        with open(filepath.as_posix(), mode='r') as fh:
+            content = fh.read()
+        return content
+    else:
+        raise OSError("Cannot find file: %s" % filepath.as_posix())
 
 
 class TestDir(object):
