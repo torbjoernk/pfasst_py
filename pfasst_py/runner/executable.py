@@ -5,7 +5,7 @@
 import logging
 
 from pfasst_py.util.fileutils import get_exe_path
-from pfasst_py.runner.parameters import ParamsMixin
+from pfasst_py.runner.parameters import ParamsMixin, MPIParamsMixin
 
 _log = logging.getLogger(__name__)
 
@@ -43,3 +43,13 @@ class Executable(ParamsMixin):
     @exe.setter
     def exe(self, value):
         self._exe = get_exe_path(value)
+
+
+class MPIExec(Executable, MPIParamsMixin):
+    def __init__(self, *args, **kwargs):
+        super(MPIExec, self).__init__(*args, **kwargs)
+
+        try:
+            self.exe = 'mpiexec'
+        except ValueError:
+            _log.warning("mpiexec not found in PATH")

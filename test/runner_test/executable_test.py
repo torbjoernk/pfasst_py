@@ -2,10 +2,12 @@
 """
 .. moduleauthor:: Torbjörn Klatt <t.klatt@fz-juelich.de>
 """
+import shutil
 import sys
 import unittest
 
-from pfasst_py.runner.executable import Executable
+from pfasst_py.runner.executable import Executable, MPIExec
+from pfasst_py.runner.parameters import MPIParamsMixin
 from pfasst_py.util.parameter import ValueParameter
 
 
@@ -43,3 +45,18 @@ class ExecutableTest(unittest.TestCase):
     def test_requires_exe_for_building_commandline(self):
         with self.assertRaises(RuntimeError):
             self.obj.build_cmd_line()
+
+
+class MPIExecTest(unittest.TestCase):
+    @unittest.skipIf(shutil.which('mpiexec') is None, "mpiexec not found in PATH")
+    def test_setup_with_mpiexec_available(self):
+        MPIExec()
+
+    @unittest.skipIf(shutil.which('mpiexec') is not None, "mpiexec found in PATH")
+    def test_setup_with_mpiexec_not_in_PATH(self):
+        with self.assertLogs('pfasst_py', level='WARNING') as cptr:
+            MPIExec()
+        self.assertRegex(''.join(cptr.output), "mpiexec not found in PATH")
+
+    def test_is_mpi_params_mixin(self):
+        self.assertIsInstance(MPIExec(), MPIParamsMixin)

@@ -11,7 +11,7 @@ _log = logging.getLogger(__name__)
 
 class Wrapper(Executable):
     def __init__(self, *args, **kwargs):
-        super(Wrapper, self).__init__()
+        super(Wrapper, self).__init__(*args, **kwargs)
 
         self._wrapped = None
 
