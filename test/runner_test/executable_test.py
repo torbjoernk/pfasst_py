@@ -7,7 +7,7 @@ import sys
 import unittest
 
 from pfasst_py.runner.executable import Executable, MPIExec
-from pfasst_py.runner.parameters import MPIParamsMixin
+from pfasst_py.runner.parameters.mpi_params_mixin import MPIParamsMixin
 from pfasst_py.util.parameter import ValueParameter
 
 

@@ -5,7 +5,7 @@
 import logging
 
 from pfasst_py.runner.executable import Executable
-from pfasst_py.runner.parameters import ParamsMixin
+from pfasst_py.runner.parameters.params_mixin import ParamsMixin
 from pfasst_py.util.parameter import ValueParameter
 
 _log = logging.getLogger(__name__)

@@ -5,7 +5,8 @@
 import logging
 
 from pfasst_py.util.fileutils import get_exe_path
-from pfasst_py.runner.parameters import ParamsMixin, MPIParamsMixin
+from pfasst_py.runner.parameters.params_mixin import ParamsMixin
+from pfasst_py.runner.parameters.mpi_params_mixin import MPIParamsMixin
 
 _log = logging.getLogger(__name__)
 
