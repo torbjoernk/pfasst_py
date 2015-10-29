@@ -217,6 +217,9 @@ class FaultyResetParameterTest(unittest.TestCase):
     def setUp(self):
         self.obj = FaultyResetParameter()
 
+    def test_does_not_require_long_parameter(self):
+        FaultyResetParameter()
+
     def test_is_list_parameter(self):
         self.assertIsInstance(self.obj, ListParameter)
 
