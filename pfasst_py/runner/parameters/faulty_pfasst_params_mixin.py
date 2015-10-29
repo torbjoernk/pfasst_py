@@ -5,7 +5,7 @@
 import logging
 
 from pfasst_py.runner.parameters.pfasst_params_mixin import PfasstParamsMixin
-from pfasst_py.util.parameter import ValueParameter
+from pfasst_py.util.parameter import FaultyResetParameter
 
 _log = logging.getLogger(__name__)
 
@@ -14,7 +14,7 @@ class FaultyPfasstParamsMixin(PfasstParamsMixin):
     def __init__(self):
         super(FaultyPfasstParamsMixin, self).__init__()
         self._params.update({
-            'reset': ValueParameter(long='reset')
+            'reset': FaultyResetParameter(long='reset')
         })
 
     @property
