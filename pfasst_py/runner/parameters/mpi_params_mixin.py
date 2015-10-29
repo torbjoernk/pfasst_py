@@ -16,6 +16,7 @@ class MPIParamsMixin(ParamsMixin):
         self._params.update({
             'np': ValueParameter(long='np')
         })
+        self.np._long_dash = '-'
 
     @property
     def np(self):

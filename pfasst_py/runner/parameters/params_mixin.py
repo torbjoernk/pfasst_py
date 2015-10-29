@@ -12,4 +12,9 @@ class ParamsMixin(object):
         self._params = {}
 
     def params_to_line(self):
-        return ' '.join([str(value) for _, value in self._params.items()])
+        line = []
+        for _, param in self._params.items():
+            this = str(param)
+            if this != "":
+                line.append(this)
+        return ' '.join(line)

@@ -6,6 +6,7 @@ import logging
 
 from pfasst_py.runner.executable import Executable
 from pfasst_py.runner.parameters.params_mixin import ParamsMixin
+from pfasst_py.runner.parameters.faulty_pfasst_params_mixin import FaultyPfasstParamsMixin
 from pfasst_py.util.parameter import ValueParameter
 
 _log = logging.getLogger(__name__)
@@ -27,7 +28,11 @@ class AdvecDiffParamsMixin(ParamsMixin):
     def vel(self):
         return self._params['vel']
 
-
 class AdvecDiffExecutable(Executable, AdvecDiffParamsMixin):
     def __init__(self, *args, **kwargs):
         super(AdvecDiffExecutable, self).__init__(*args, **kwargs)
+
+
+class AdvecDiffFaultyPfasstExecutable(Executable, FaultyPfasstParamsMixin, AdvecDiffParamsMixin):
+    def __init__(self, *args, **kwargs):
+        super(AdvecDiffFaultyPfasstExecutable, self).__init__(*args, **kwargs)

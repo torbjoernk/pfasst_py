@@ -19,7 +19,7 @@ class Wrapper(Executable):
             self.wrapped = kwargs['wrapped']
 
     def build_cmd_line(self, additional_args=None):
-        line = super(Wrapper, self).build_cmd_line(additional_args=additional_args)
+        line = self.exe.build_cmd_line(additional_args=additional_args)
 
         if self.wrapped:
             line += " " + self.wrapped.build_cmd_line(additional_args=additional_args)
@@ -27,6 +27,17 @@ class Wrapper(Executable):
             _log.warning("No wrapped executable defined.")
 
         return line
+
+    @property
+    def exe(self):
+        return self._exe
+
+    @exe.setter
+    def exe(self, value):
+        if isinstance(value, Executable):
+            self._exe = value
+        else:
+            self._exe = Executable(exe=value)
 
     @property
     def wrapped(self):

@@ -17,11 +17,11 @@ class FaultyPfasstParamsMixin(PfasstParamsMixin):
             'reset': FaultyResetParameter()
         })
 
-    def add_reset(self, proc, self_step, iteri):
-        if self.tend.value and self.dt.value and self.num_iters.value and self.np.value:
+    def add_reset(self, np, proc, self_step, iteri):
+        if self.tend.value and self.dt.value and self.num_iters.value:
             nsteps = self.tend.value / self.dt.value
 
-            step = (self_step - 1) * self.np.value + proc
+            step = (self_step - 1) * np + proc
             if step > nsteps:
                 _log.warning("Reset point in step %s of proc %s will not trigger as only %s steps will be computed."
                              % (self_step, proc, nsteps))

@@ -9,6 +9,8 @@ _log = logging.getLogger(__name__)
 
 class Parameter(object):
     def __init__(self, *args, **kwargs):
+        self._short_dash = '-'
+        self._long_dash = '--'
         self._short = None
         self._long = None
 
@@ -31,10 +33,10 @@ class Parameter(object):
             raise ValueError("At least either short (%s) or long (%s) name must be specified." % (self.short, self.long))
 
     def as_long(self):
-        return "--%s" % self.long
+        return "%s%s" % (self.long_dash, self.long)
 
     def as_short(self):
-        return "-%s" % self.short
+        return "%s%s" % (self.short_dash, self.short)
 
     @property
     def long(self):
@@ -43,6 +45,14 @@ class Parameter(object):
     @property
     def short(self):
         return self._short
+
+    @property
+    def long_dash(self):
+        return self._long_dash
+
+    @property
+    def short_dash(self):
+        return self._short_dash
 
     def __str__(self):
         return self.as_long()

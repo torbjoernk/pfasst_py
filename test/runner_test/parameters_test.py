@@ -132,9 +132,6 @@ class PfasstParamsMixinTest(unittest.TestCase):
     def test_is_mlsdc_params_mixin(self):
         self.assertTrue(issubclass(PfasstParamsMixin, MLSDCParamsMixin))
 
-    def test_is_mpi_params_mixin(self):
-        self.assertTrue(issubclass(PfasstParamsMixin, MPIParamsMixin))
-
 
 class FaultyPfasstMixinTest(unittest.TestCase):
     def setUp(self):
@@ -149,10 +146,9 @@ class FaultyPfasstMixinTest(unittest.TestCase):
     def test_can_add_valid_reset_point(self):
         self.obj.tend.value = 1.0
         self.obj.dt.value = 0.1
-        self.obj.np.value = 2
         self.obj.num_iters.value = 5
-        self.obj.add_reset(1, 2, 3)
+        self.obj.add_reset(2, 1, 2, 3)
 
     def test_requires_other_variables_for_adding_reset_point(self):
         with self.assertRaises(RuntimeError):
-            self.obj.add_reset(1, 2, 3)
+            self.obj.add_reset(2, 1, 2, 3)

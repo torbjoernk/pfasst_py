@@ -25,7 +25,7 @@ class Example(object):
 
     def run(self, additional_args=None):
         if self.runner:
-            self.runner.run(additional_args=additional_args)
+            self.runner.run(additional_args=additional_args, cwd=self.rundir)
         else:
             _log.error("No runner defined.")
             raise RuntimeError("No runner defined.")
