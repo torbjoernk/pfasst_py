@@ -31,6 +31,12 @@ class LogComponent(object):
     def _validation(self, value):
         return self._parse(value)
 
+    def __str__(self):
+        return str(self.value)
+
+    def __repr__(self):
+        return "%s<%s>" % (self.__class__, self.value)
+
 
 class TimestampComponent(LogComponent):
     REGEX = '(?P<timestamp>[0-9:,]*)'
@@ -44,7 +50,7 @@ class TimestampComponent(LogComponent):
         match = self.TIME_COMP_MATCHER.match(raw)
         if match:
             comp = match.groupdict()
-            return datetime.time(int(comp['hour']), int(comp['min']), int(comp['sec']), int(comp['msec']))
+            return datetime.time(int(comp['hour']), int(comp['min']), int(comp['sec']), int(comp['msec']) * 10000)
         else:
             _log.error("Cannot parse timestamp: '%s'" % raw)
             raise ValueError("Cannot parse timestamp: '%s'" % raw)

@@ -30,6 +30,7 @@ class LogLine(object):
         self._raw = None
         self.auto_parse = auto_parse
         self._components = {}
+        self._is_parsed = False
 
         self.raw = line
 
@@ -52,6 +53,10 @@ class LogLine(object):
     @property
     def message(self):
         return self._components.get('message', None)
+
+    @property
+    def is_parsed(self):
+        return self._is_parsed
 
     @property
     def raw(self):
@@ -79,3 +84,10 @@ class LogLine(object):
     def _populate_components(self, groupdict):
         for comp, match in groupdict.items():
             self._components.update({comp: self.COMPONENTS[comp](match)})
+        self._is_parsed = True
+
+    def __str__(self):
+        return "'%s'" % self.raw
+
+    def __repr__(self):
+        return "LogLine<timestamp=%s, logger=%s, level=%s, rank=%s, message='%s'>" % (self.timestamp, self.logger, self.level, self.rank, self.message)

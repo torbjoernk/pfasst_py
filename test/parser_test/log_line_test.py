@@ -22,7 +22,7 @@ class LogLineTest(unittest.TestCase):
 
     def test_parse_mpi_line_with_message(self):
         obj = LogLine(self.msg_normal)
-        self.assertEqual(obj.timestamp.value, datetime.time(13, 51, 15, 37))
+        self.assertEqual(obj.timestamp.value, datetime.time(13, 51, 15, 370000))
         self.assertEqual(obj.logger.value, 'PFASST')
         self.assertEqual(obj.level.value, 'INFO')
         self.assertEqual(obj.rank.value, '0')
@@ -30,7 +30,7 @@ class LogLineTest(unittest.TestCase):
 
     def test_parse_mpi_line_without_message(self):
         obj = LogLine(self.msg_no_text)
-        self.assertEqual(obj.timestamp.value, datetime.time(13, 51, 15, 37))
+        self.assertEqual(obj.timestamp.value, datetime.time(13, 51, 15, 370000))
         self.assertEqual(obj.logger.value, 'PFASST')
         self.assertEqual(obj.level.value, 'INFO')
         self.assertEqual(obj.rank.value, '0')
@@ -38,7 +38,7 @@ class LogLineTest(unittest.TestCase):
 
     def test_parse_non_mpi_line_with_message(self):
         obj = LogLine(self.msg_no_mpi)
-        self.assertEqual(obj.timestamp.value, datetime.time(13, 51, 15, 37))
+        self.assertEqual(obj.timestamp.value, datetime.time(13, 51, 15, 370000))
         self.assertEqual(obj.logger.value, 'SDC')
         self.assertEqual(obj.level.value, 'INFO')
         self.assertIsNone(obj.rank)
@@ -46,7 +46,7 @@ class LogLineTest(unittest.TestCase):
 
     def test_parse_non_mpi_line_without_message(self):
         obj = LogLine(self.msg_no_mpi_no_text)
-        self.assertEqual(obj.timestamp.value, datetime.time(13, 51, 15, 37))
+        self.assertEqual(obj.timestamp.value, datetime.time(13, 51, 15, 370000))
         self.assertEqual(obj.logger.value, 'SDC')
         self.assertEqual(obj.level.value, 'INFO')
         self.assertIsNone(obj.rank)
