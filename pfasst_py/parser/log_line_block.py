@@ -78,6 +78,7 @@ class TimeStepLogLinesBlock(LogLineBlock):
         super(TimeStepLogLinesBlock, self).__init__(initial)
         self._time_step = None
         self._total_steps = None
+        self.iterations = []
 
     def is_start_of_block(self, line):
         if line.level.value == 'INFO':

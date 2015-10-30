@@ -22,4 +22,4 @@ class ParserTest(unittest.TestCase):
         self.obj.parse(self.filecontent)
         self.obj.parse_blocks()
         self.assertEqual(len(self.obj.time_steps), 1)
-        self.assertEqual(len(self.obj.iterations), 5)
+        self.assertEqual(len(self.obj.time_steps[0].iterations), 5)

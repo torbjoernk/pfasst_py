@@ -11,14 +11,9 @@ _log = logging.getLogger(__name__)
 
 
 class Parser(object):
-    BLOCK_TYPES = {
-        'time_steps': TimeStepLogLinesBlock,
-        'iterations': IterationLogLinesBlock
-    }
-
     def __init__(self):
         self._lines = None
-        self._blocks = {block: [] for block in self.BLOCK_TYPES.keys()}
+        self._time_steps = []
 
     def parse(self, lines):
         if isinstance(lines, str):
@@ -32,16 +27,16 @@ class Parser(object):
                 self.lines.append(LogLine(line))
 
     def parse_blocks(self):
-        for block in self.BLOCK_TYPES.keys():
-            self._parse_block(block)
-
-    def _parse_block(self, block_type):
         if self.lines:
             for line in self.lines:
-                if self.BLOCK_TYPES[block_type]().is_start_of_block(line):
-                    self.__getattribute__(block_type).append(self.BLOCK_TYPES[block_type]([line]))
-                elif len(self._blocks[block_type]) > 0:
-                    self.__getattribute__(block_type)[-1].append_line(line)
+                if TimeStepLogLinesBlock().is_start_of_block(line):
+                    self.time_steps.append(TimeStepLogLinesBlock([line]))
+                elif len(self.time_steps) > 0:
+                    self.time_steps[-1].append_line(line)
+                    if IterationLogLinesBlock().is_start_of_block(line):
+                        self.time_steps[-1].iterations.append(IterationLogLinesBlock(line))
+                    elif len(self.time_steps[-1].iterations) > 0:
+                        self.time_steps[-1].iterations[-1].append_line(line)
         else:
             _log.error("Lines required for parsing into Time Step Blocks.")
             raise RuntimeError("Lines required for parsing into Time Step Blocks.")
@@ -52,8 +47,4 @@ class Parser(object):
 
     @property
     def time_steps(self):
-        return self._blocks.get('time_steps', [])
-
-    @property
-    def iterations(self):
-        return self._blocks.get('iterations', [])
+        return self._time_steps
