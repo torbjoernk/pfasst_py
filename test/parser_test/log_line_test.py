@@ -15,6 +15,11 @@ class LogLineTest(unittest.TestCase):
         self.msg_no_mpi = "13:51:15,37 [SDC       , INFO ] PFASST Prediction step"
         self.msg_no_mpi_no_text = "13:51:15,37 [SDC       , INFO ] "
 
+    def test_emits_a_warning_for_wrongly_formatted_log_lines(self):
+        with self.assertLogs('pfasst_py', level='WARNING') as cptr:
+            LogLine('not a log line')
+        self.assertRegex('\n'.join(cptr.output), "Log line could not be parsed")
+
     def test_parse_mpi_line_with_message(self):
         obj = LogLine(self.msg_normal)
         self.assertEqual(obj.timestamp.value, datetime.time(13, 51, 15, 37))
