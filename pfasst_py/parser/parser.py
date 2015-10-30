@@ -5,29 +5,20 @@
 import logging
 
 from pfasst_py.parser.log_line import LogLine
+from pfasst_py.parser.log_line_block import TimeStepLogLinesBlock, IterationLogLinesBlock
 
 _log = logging.getLogger(__name__)
 
 
 class Parser(object):
+    BLOCK_TYPES = {
+        'time_steps': TimeStepLogLinesBlock,
+        'iterations': IterationLogLinesBlock
+    }
+
     def __init__(self):
         self._lines = None
-        self._levels = {
-            'DEBUG': [],
-            'INFO': [],
-            'WARN': [],
-            'ERROR': [],
-            'VERB1': [],
-            'VERB2': [],
-            'VERB3': [],
-            'VERB4': [],
-            'VERB5': [],
-            'VERB6': [],
-            'VERB7': [],
-            'VERB8': [],
-            'VERB9': [],
-        }
-        self._loggers = {}
+        self._blocks = {block: [] for block in self.BLOCK_TYPES.keys()}
 
     def parse(self, lines):
         if isinstance(lines, str):
@@ -40,30 +31,29 @@ class Parser(object):
             for line in lines:
                 self.lines.append(LogLine(line))
 
-            self._categorize_lines()
+    def parse_blocks(self):
+        for block in self.BLOCK_TYPES.keys():
+            self._parse_block(block)
+
+    def _parse_block(self, block_type):
+        if self.lines:
+            for line in self.lines:
+                if self.BLOCK_TYPES[block_type]().is_start_of_block(line):
+                    self.__getattribute__(block_type).append(self.BLOCK_TYPES[block_type]([line]))
+                elif len(self._blocks[block_type]) > 0:
+                    self.__getattribute__(block_type)[-1].append_line(line)
+        else:
+            _log.error("Lines required for parsing into Time Step Blocks.")
+            raise RuntimeError("Lines required for parsing into Time Step Blocks.")
 
     @property
     def lines(self):
         return self._lines
 
     @property
-    def levels(self):
-        return self._levels
+    def time_steps(self):
+        return self._blocks.get('time_steps', [])
 
     @property
-    def loggers(self):
-        return self._loggers
-
-    def _categorize_lines(self):
-        if self.lines:
-            for line in self.lines:
-                level = line.level.value
-                self.levels[level].append(line)
-
-                logger = line.logger.value
-                if logger not in self.loggers:
-                    self.loggers.update({logger: []})
-                self.loggers[logger].append(line)
-        else:
-            _log.error("No lines available.")
-            raise RuntimeError("No lines available.")
+    def iterations(self):
+        return self._blocks.get('iterations', [])
