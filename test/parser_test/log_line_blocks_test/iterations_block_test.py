@@ -2,6 +2,7 @@
 """
 .. moduleauthor:: Torbjörn Klatt <t.klatt@fz-juelich.de>
 """
+import datetime
 import unittest
 
 from pfasst_py.parser.log_line_blocks.iterations_block import IterationLogLinesBlock
@@ -10,8 +11,8 @@ from pfasst_py.parser.log_line import LogLine
 
 TIME_STEP_START_LINE = LogLine('04.11.2015 22:10:08,03 [SDC       , INFO ] Time Step 1 of 2')
 ITERMEDIATE_LINE = LogLine('04.11.2015 22:10:08,03 [SDC       , INFO ] SDC Prediction step')
-ITER_START_LINE = LogLine('04.11.2015 13:05:39,89 [SDC       , INFO ] Iteration 1')
-ITER_CONTENT_LINE = LogLine('04.11.2015 13:05:40,53 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 4.31854e-03      |rel residual| = 2.13269e-03')
+ITER_START_LINE = LogLine('04.11.2015 08:08:09,2058 [SDC       , INFO ] Iteration 1')
+ITER_CONTENT_LINE = LogLine('04.11.2015 08:08:10,7274 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 4.31854e-03      |rel residual| = 2.13269e-03')
 DEBUG_LINE = LogLine('04.11.2015 22:10:08,03 [SWEEPER   , DEBUG ] some debug message')
 
 
@@ -46,4 +47,9 @@ class IterationLogLinesBlockTest(unittest.TestCase):
     def test_to_model(self):
         self.obj = IterationLogLinesBlock([ITER_START_LINE, ITER_CONTENT_LINE])
         self.assertEqual(self.obj.iteri, 1)
-        self.obj.to_model()
+        model = self.obj.to_model()
+        print(model)
+        self.assertEqual(model.index, 1)
+        self.assertEqual(model.timing, datetime.datetime(2015, 11, 4, 8, 8, 10, 727400) - datetime.datetime(2015, 11, 4, 8, 8, 9, 205800))
+        self.assertEqual(model.abs_res, 4.31854e-3)
+        self.assertEqual(model.rel_res, 2.13269e-3)

@@ -34,9 +34,6 @@ class LogComponent(object):
     def __str__(self):
         return str(self.value)
 
-    def __repr__(self):
-        return "%s<%s>" % (self.__class__, self.value)
-
 
 class TimestampComponent(LogComponent):
     REGEX = '(?P<timestamp>[0-9.]*\s[0-9:,]*)'
