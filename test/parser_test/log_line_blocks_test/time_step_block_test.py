@@ -8,10 +8,10 @@ from pfasst_py.parser.log_line_blocks.time_step_block import TimeStepLogLinesBlo
 from pfasst_py.parser.log_line_blocks.log_line_block import LogLineBlock
 from pfasst_py.parser.log_line import LogLine
 
-TIME_STEP_START_LINE = LogLine('22:10:08,03 [SDC       , INFO ] Time Step 1 of 2')
-ITERMEDIATE_LINE = LogLine('22:10:08,03 [SDC       , INFO ] SDC Prediction step')
-ITER_START_LINE = LogLine('22:10:08,03 [SDC       , INFO ] Iteration 1')
-DEBUG_LINE = LogLine('22:10:08,03 [SWEEPER   , DEBUG ] some debug message')
+TIME_STEP_START_LINE = LogLine('04.11.2015 22:10:08,03 [SDC       , INFO ] Time Step 1 of 2')
+ITERMEDIATE_LINE = LogLine('04.11.2015 22:10:08,03 [SDC       , INFO ] SDC Prediction step')
+ITER_START_LINE = LogLine('04.11.2015 22:10:08,03 [SDC       , INFO ] Iteration 1')
+DEBUG_LINE = LogLine('04.11.2015 22:10:08,03 [SWEEPER   , DEBUG ] some debug message')
 
 
 class TimeStepLogLinesBlockTest(unittest.TestCase):

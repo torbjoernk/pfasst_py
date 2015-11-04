@@ -1,105 +1,105 @@
-13:05:37,59 [DEFAULT   , INFO ] PFASST++ version v0.5.0-rc1-172-g9634ebc-dirty
-13:05:37,67 [SWEEPER   , INFO ] using as quadrature: Gauss-Radau (right) on [0.0, 1.0] with 3 nodes and an expected error of 2.77556e-17
-13:05:37,67 [SWEEPER   , INFO ] using as quadrature: Gauss-Radau (right) on [0.0, 1.0] with 3 nodes and an expected error of 2.77556e-17
-13:05:37,55 [SWEEPER   , INFO ] using as quadrature: Gauss-Radau (right) on [0.0, 1.0] with 3 nodes and an expected error of 2.77556e-17
-13:05:37,94 [SDC       , INFO ] 
-13:05:37,94 [SDC       , INFO ] Sequential SDC
-13:05:37,94 [SDC       , INFO ]   t0:        0.00000
-13:05:37,94 [SDC       , INFO ]   dt:        0.05000
-13:05:37,94 [SDC       , INFO ]   T:         0.10000
-13:05:37,94 [SDC       , INFO ]   num steps: 2
-13:05:37,94 [SDC       , INFO ]   max iter:  20
-13:05:37,94 [SDC       , INFO ] 
-13:05:37,94 [SDC       , INFO ] Time Step 1 of 2
-13:05:37,94 [SDC       , INFO ] 
-13:05:37,94 [SDC       , INFO ] Iteration 0 (SDC Prediction)
-13:05:37,98 [SWEEPER   , INFO ] Predicting from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
-13:05:39,82 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 6.80801e-02      |rel residual| = 3.27686e-02
-13:05:39,89 [SDC       , INFO ] 
-13:05:39,89 [SDC       , INFO ] Iteration 1
-13:05:39,32 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
-13:05:40,53 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 4.31854e-03      |rel residual| = 2.13269e-03
-13:05:40,60 [SDC       , INFO ] 
-13:05:40,60 [SDC       , INFO ] Iteration 2
-13:05:40,03 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
-13:05:42,18 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 2.49228e-04      |rel residual| = 1.23279e-04
-13:05:42,25 [SDC       , INFO ] 
-13:05:42,25 [SDC       , INFO ] Iteration 3
-13:05:42,56 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
-13:05:43,73 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 1.25677e-05      |rel residual| = 6.21704e-06
-13:05:43,80 [SDC       , INFO ] 
-13:05:43,80 [SDC       , INFO ] Iteration 4
-13:05:43,26 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
-13:05:44,41 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 4.87113e-07      |rel residual| = 2.40969e-07
-13:05:44,48 [SDC       , INFO ] 
-13:05:44,48 [SDC       , INFO ] Iteration 5
-13:05:45,98 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
-13:05:46,07 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 5.32813e-09      |rel residual| = 2.63576e-09
-13:05:46,14 [SDC       , INFO ] 
-13:05:46,14 [SDC       , INFO ] Iteration 6
-13:05:46,55 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
-13:05:47,74 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 1.57130e-09      |rel residual| = 7.77304e-10
-13:05:47,82 [SDC       , INFO ] 
-13:05:47,82 [SDC       , INFO ] Iteration 7
-13:05:48,17 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
-13:05:49,29 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 2.30964e-10      |rel residual| = 1.14255e-10
-13:05:49,36 [SDC       , INFO ] 
-13:05:49,36 [SDC       , INFO ] Iteration 8
-13:05:49,82 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
-13:05:50,96 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 2.29757e-11      |rel residual| = 1.13658e-11
-13:05:50,96 [SDC       , INFO ] Sweeper has converged.
-13:05:50,96 [SWEEPER   , INFO ] number function evaluations:
-13:05:50,96 [SWEEPER   , INFO ]   expl:        36
-13:05:50,96 [SWEEPER   , INFO ]   impl:        0
-13:05:50,96 [SWEEPER   , INFO ]   impl solves: 27
-13:05:50,96 [SDC       , INFO ] Number Iterations: 8
-13:05:50,96 [SDC       , INFO ] Absolute Residual: 2.29757e-11
-13:05:50,96 [SDC       , INFO ] Relative Residual: 1.13658e-11
-13:05:50,97 [SDC       , INFO ] 
-13:05:50,97 [SDC       , INFO ] Time Step 2 of 2
-13:05:50,97 [SDC       , INFO ] 
-13:05:50,97 [SDC       , INFO ] Iteration 0 (SDC Prediction)
-13:05:50,00 [SWEEPER   , INFO ] Predicting from t=0.05000 over 3 nodes to t=0.10000 (dt=0.05000)
-13:05:52,78 [SWEEPER   , INFO ]   t[3]=0.10000      |abs residual| = 4.58741e-02      |rel residual| = 3.27686e-02
-13:05:52,85 [SDC       , INFO ] 
-13:05:52,85 [SDC       , INFO ] Iteration 1
-13:05:52,22 [SWEEPER   , INFO ] Sweeping from t=0.05000 over 3 nodes to t=0.10000 (dt=0.05000)
-13:05:53,39 [SWEEPER   , INFO ]   t[3]=0.10000      |abs residual| = 2.90995e-03      |rel residual| = 2.13269e-03
-13:05:53,47 [SDC       , INFO ] 
-13:05:53,47 [SDC       , INFO ] Iteration 2
-13:05:53,95 [SWEEPER   , INFO ] Sweeping from t=0.05000 over 3 nodes to t=0.10000 (dt=0.05000)
-13:05:55,02 [SWEEPER   , INFO ]   t[3]=0.10000      |abs residual| = 1.67937e-04      |rel residual| = 1.23279e-04
-13:05:55,09 [SDC       , INFO ] 
-13:05:55,09 [SDC       , INFO ] Iteration 3
-13:05:55,45 [SWEEPER   , INFO ] Sweeping from t=0.05000 over 3 nodes to t=0.10000 (dt=0.05000)
-13:05:56,61 [SWEEPER   , INFO ]   t[3]=0.10000      |abs residual| = 8.46841e-06      |rel residual| = 6.21704e-06
-13:05:56,68 [SDC       , INFO ] 
-13:05:56,68 [SDC       , INFO ] Iteration 4
-13:05:56,17 [SWEEPER   , INFO ] Sweeping from t=0.05000 over 3 nodes to t=0.10000 (dt=0.05000)
-13:05:57,38 [SWEEPER   , INFO ]   t[3]=0.10000      |abs residual| = 3.28229e-07      |rel residual| = 2.40969e-07
-13:05:57,46 [SDC       , INFO ] 
-13:05:57,46 [SDC       , INFO ] Iteration 5
-13:05:58,92 [SWEEPER   , INFO ] Sweeping from t=0.05000 over 3 nodes to t=0.10000 (dt=0.05000)
-13:05:59,09 [SWEEPER   , INFO ]   t[3]=0.10000      |abs residual| = 3.59023e-09      |rel residual| = 2.63576e-09
-13:05:59,16 [SDC       , INFO ] 
-13:05:59,16 [SDC       , INFO ] Iteration 6
-13:05:59,83 [SWEEPER   , INFO ] Sweeping from t=0.05000 over 3 nodes to t=0.10000 (dt=0.05000)
-13:06:00,03 [SWEEPER   , INFO ]   t[3]=0.10000      |abs residual| = 1.05878e-09      |rel residual| = 7.77304e-10
-13:06:00,11 [SDC       , INFO ] 
-13:06:00,11 [SDC       , INFO ] Iteration 7
-13:06:01,51 [SWEEPER   , INFO ] Sweeping from t=0.05000 over 3 nodes to t=0.10000 (dt=0.05000)
-13:06:02,90 [SWEEPER   , INFO ]   t[3]=0.10000      |abs residual| = 1.55629e-10      |rel residual| = 1.14255e-10
-13:06:02,97 [SDC       , INFO ] 
-13:06:02,97 [SDC       , INFO ] Iteration 8
-13:06:02,53 [SWEEPER   , INFO ] Sweeping from t=0.05000 over 3 nodes to t=0.10000 (dt=0.05000)
-13:06:03,11 [SWEEPER   , INFO ]   t[3]=0.10000      |abs residual| = 1.54815e-11      |rel residual| = 1.13657e-11
-13:06:03,11 [SDC       , INFO ] Sweeper has converged.
-13:06:03,11 [SWEEPER   , INFO ] number function evaluations:
-13:06:03,11 [SWEEPER   , INFO ]   expl:        36
-13:06:03,11 [SWEEPER   , INFO ]   impl:        0
-13:06:03,11 [SWEEPER   , INFO ]   impl solves: 27
-13:06:03,11 [SDC       , INFO ] Number Iterations: 8
-13:06:03,11 [SDC       , INFO ] Absolute Residual: 1.54815e-11
-13:06:03,11 [SDC       , INFO ] Relative Residual: 1.13657e-11
-13:06:03,11 [SDC       , INFO ] End time point reached: 0.10000
-13:06:03,11 [SDC       , INFO ] Run Finished.
+04.11.2015 08:08:07,4595 [DEFAULT   , INFO ] PFASST++ version v0.5.0-rc1-172-g9634ebc-dirty
+04.11.2015 08:08:07,4677 [SWEEPER   , INFO ] using as quadrature: Gauss-Radau (right) on [0.0, 1.0] with 3 nodes and an expected error of 2.77556e-17
+04.11.2015 08:08:07,4677 [SWEEPER   , INFO ] using as quadrature: Gauss-Radau (right) on [0.0, 1.0] with 3 nodes and an expected error of 2.77556e-17
+04.11.2015 08:08:07,5686 [SWEEPER   , INFO ] using as quadrature: Gauss-Radau (right) on [0.0, 1.0] with 3 nodes and an expected error of 2.77556e-17
+04.11.2015 08:08:07,8430 [SDC       , INFO ] 
+04.11.2015 08:08:07,8430 [SDC       , INFO ] Sequential SDC
+04.11.2015 08:08:07,8430 [SDC       , INFO ]   t0:        0.00000
+04.11.2015 08:08:07,8430 [SDC       , INFO ]   dt:        0.05000
+04.11.2015 08:08:07,8430 [SDC       , INFO ]   T:         0.10000
+04.11.2015 08:08:07,8430 [SDC       , INFO ]   num steps: 2
+04.11.2015 08:08:07,8430 [SDC       , INFO ]   max iter:  20
+04.11.2015 08:08:07,8430 [SDC       , INFO ] 
+04.11.2015 08:08:07,8430 [SDC       , INFO ] Time Step 1 of 2
+04.11.2015 08:08:07,8430 [SDC       , INFO ] 
+04.11.2015 08:08:07,8430 [SDC       , INFO ] Iteration 0 (SDC Prediction)
+04.11.2015 08:08:07,8469 [SWEEPER   , INFO ] Predicting from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
+04.11.2015 08:08:09,1983 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 6.80801e-02      |rel residual| = 3.27686e-02
+04.11.2015 08:08:09,2058 [SDC       , INFO ] 
+04.11.2015 08:08:09,2058 [SDC       , INFO ] Iteration 1
+04.11.2015 08:08:09,3749 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
+04.11.2015 08:08:10,7274 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 4.31854e-03      |rel residual| = 2.13269e-03
+04.11.2015 08:08:10,7351 [SDC       , INFO ] 
+04.11.2015 08:08:10,7351 [SDC       , INFO ] Iteration 2
+04.11.2015 08:08:10,8927 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
+04.11.2015 08:08:12,2243 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 2.49228e-04      |rel residual| = 1.23279e-04
+04.11.2015 08:08:12,2314 [SDC       , INFO ] 
+04.11.2015 08:08:12,2315 [SDC       , INFO ] Iteration 3
+04.11.2015 08:08:12,3770 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
+04.11.2015 08:08:13,7186 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 1.25677e-05      |rel residual| = 6.21704e-06
+04.11.2015 08:08:13,7266 [SDC       , INFO ] 
+04.11.2015 08:08:13,7266 [SDC       , INFO ] Iteration 4
+04.11.2015 08:08:13,8961 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
+04.11.2015 08:08:15,2673 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 4.87113e-07      |rel residual| = 2.40969e-07
+04.11.2015 08:08:15,2748 [SDC       , INFO ] 
+04.11.2015 08:08:15,2749 [SDC       , INFO ] Iteration 5
+04.11.2015 08:08:15,4360 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
+04.11.2015 08:08:16,7822 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 5.32813e-09      |rel residual| = 2.63576e-09
+04.11.2015 08:08:16,7897 [SDC       , INFO ] 
+04.11.2015 08:08:16,7897 [SDC       , INFO ] Iteration 6
+04.11.2015 08:08:16,9442 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
+04.11.2015 08:08:18,2779 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 1.57130e-09      |rel residual| = 7.77304e-10
+04.11.2015 08:08:18,2850 [SDC       , INFO ] 
+04.11.2015 08:08:18,2851 [SDC       , INFO ] Iteration 7
+04.11.2015 08:08:18,4355 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
+04.11.2015 08:08:19,8091 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 2.30964e-10      |rel residual| = 1.14255e-10
+04.11.2015 08:08:19,8161 [SDC       , INFO ] 
+04.11.2015 08:08:19,8161 [SDC       , INFO ] Iteration 8
+04.11.2015 08:08:19,9910 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
+04.11.2015 08:08:21,3314 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 2.29757e-11      |rel residual| = 1.13658e-11
+04.11.2015 08:08:21,3314 [SDC       , INFO ] Sweeper has converged.
+04.11.2015 08:08:21,3314 [SWEEPER   , INFO ] number function evaluations:
+04.11.2015 08:08:21,3314 [SWEEPER   , INFO ]   expl:        36
+04.11.2015 08:08:21,3314 [SWEEPER   , INFO ]   impl:        0
+04.11.2015 08:08:21,3314 [SWEEPER   , INFO ]   impl solves: 27
+04.11.2015 08:08:21,3314 [SDC       , INFO ] Number Iterations: 8
+04.11.2015 08:08:21,3315 [SDC       , INFO ] Absolute Residual: 2.29757e-11
+04.11.2015 08:08:21,3315 [SDC       , INFO ] Relative Residual: 1.13658e-11
+04.11.2015 08:08:21,3333 [SDC       , INFO ] 
+04.11.2015 08:08:21,3333 [SDC       , INFO ] Time Step 2 of 2
+04.11.2015 08:08:21,3333 [SDC       , INFO ] 
+04.11.2015 08:08:21,3333 [SDC       , INFO ] Iteration 0 (SDC Prediction)
+04.11.2015 08:08:21,3357 [SWEEPER   , INFO ] Predicting from t=0.05000 over 3 nodes to t=0.10000 (dt=0.05000)
+04.11.2015 08:08:22,6440 [SWEEPER   , INFO ]   t[3]=0.10000      |abs residual| = 4.58741e-02      |rel residual| = 3.27686e-02
+04.11.2015 08:08:22,6512 [SDC       , INFO ] 
+04.11.2015 08:08:22,6513 [SDC       , INFO ] Iteration 1
+04.11.2015 08:08:22,8078 [SWEEPER   , INFO ] Sweeping from t=0.05000 over 3 nodes to t=0.10000 (dt=0.05000)
+04.11.2015 08:08:24,1472 [SWEEPER   , INFO ]   t[3]=0.10000      |abs residual| = 2.90995e-03      |rel residual| = 2.13269e-03
+04.11.2015 08:08:24,1546 [SDC       , INFO ] 
+04.11.2015 08:08:24,1546 [SDC       , INFO ] Iteration 2
+04.11.2015 08:08:24,3151 [SWEEPER   , INFO ] Sweeping from t=0.05000 over 3 nodes to t=0.10000 (dt=0.05000)
+04.11.2015 08:08:25,6615 [SWEEPER   , INFO ]   t[3]=0.10000      |abs residual| = 1.67937e-04      |rel residual| = 1.23279e-04
+04.11.2015 08:08:25,6689 [SDC       , INFO ] 
+04.11.2015 08:08:25,6689 [SDC       , INFO ] Iteration 3
+04.11.2015 08:08:25,8210 [SWEEPER   , INFO ] Sweeping from t=0.05000 over 3 nodes to t=0.10000 (dt=0.05000)
+04.11.2015 08:08:27,1514 [SWEEPER   , INFO ]   t[3]=0.10000      |abs residual| = 8.46841e-06      |rel residual| = 6.21704e-06
+04.11.2015 08:08:27,1591 [SDC       , INFO ] 
+04.11.2015 08:08:27,1591 [SDC       , INFO ] Iteration 4
+04.11.2015 08:08:27,3287 [SWEEPER   , INFO ] Sweeping from t=0.05000 over 3 nodes to t=0.10000 (dt=0.05000)
+04.11.2015 08:08:28,7628 [SWEEPER   , INFO ]   t[3]=0.10000      |abs residual| = 3.28229e-07      |rel residual| = 2.40969e-07
+04.11.2015 08:08:28,7708 [SDC       , INFO ] 
+04.11.2015 08:08:28,7708 [SDC       , INFO ] Iteration 5
+04.11.2015 08:08:28,9312 [SWEEPER   , INFO ] Sweeping from t=0.05000 over 3 nodes to t=0.10000 (dt=0.05000)
+04.11.2015 08:08:30,2539 [SWEEPER   , INFO ]   t[3]=0.10000      |abs residual| = 3.59023e-09      |rel residual| = 2.63576e-09
+04.11.2015 08:08:30,2613 [SDC       , INFO ] 
+04.11.2015 08:08:30,2613 [SDC       , INFO ] Iteration 6
+04.11.2015 08:08:30,4278 [SWEEPER   , INFO ] Sweeping from t=0.05000 over 3 nodes to t=0.10000 (dt=0.05000)
+04.11.2015 08:08:31,7703 [SWEEPER   , INFO ]   t[3]=0.10000      |abs residual| = 1.05878e-09      |rel residual| = 7.77304e-10
+04.11.2015 08:08:31,7777 [SDC       , INFO ] 
+04.11.2015 08:08:31,7777 [SDC       , INFO ] Iteration 7
+04.11.2015 08:08:31,9302 [SWEEPER   , INFO ] Sweeping from t=0.05000 over 3 nodes to t=0.10000 (dt=0.05000)
+04.11.2015 08:08:33,2623 [SWEEPER   , INFO ]   t[3]=0.10000      |abs residual| = 1.55629e-10      |rel residual| = 1.14255e-10
+04.11.2015 08:08:33,2696 [SDC       , INFO ] 
+04.11.2015 08:08:33,2696 [SDC       , INFO ] Iteration 8
+04.11.2015 08:08:33,4440 [SWEEPER   , INFO ] Sweeping from t=0.05000 over 3 nodes to t=0.10000 (dt=0.05000)
+04.11.2015 08:08:34,7851 [SWEEPER   , INFO ]   t[3]=0.10000      |abs residual| = 1.54815e-11      |rel residual| = 1.13657e-11
+04.11.2015 08:08:34,7851 [SDC       , INFO ] Sweeper has converged.
+04.11.2015 08:08:34,7851 [SWEEPER   , INFO ] number function evaluations:
+04.11.2015 08:08:34,7851 [SWEEPER   , INFO ]   expl:        36
+04.11.2015 08:08:34,7851 [SWEEPER   , INFO ]   impl:        0
+04.11.2015 08:08:34,7851 [SWEEPER   , INFO ]   impl solves: 27
+04.11.2015 08:08:34,7851 [SDC       , INFO ] Number Iterations: 8
+04.11.2015 08:08:34,7851 [SDC       , INFO ] Absolute Residual: 1.54815e-11
+04.11.2015 08:08:34,7851 [SDC       , INFO ] Relative Residual: 1.13657e-11
+04.11.2015 08:08:34,7852 [SDC       , INFO ] End time point reached: 0.10000
+04.11.2015 08:08:34,7852 [SDC       , INFO ] Run Finished.

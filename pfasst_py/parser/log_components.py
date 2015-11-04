@@ -39,9 +39,9 @@ class LogComponent(object):
 
 
 class TimestampComponent(LogComponent):
-    REGEX = '(?P<timestamp>[0-9:,]*)'
+    REGEX = '(?P<timestamp>[0-9.]*\s[0-9:,]*)'
 
-    TIME_COMP_MATCHER = re.compile('^(?P<hour>[0-9]*):(?P<min>[0-9]*):(?P<sec>[0-9]*),(?P<msec>[0-9]*)$')
+    TIME_COMP_MATCHER = re.compile('^(?P<day>[0-9]{2})\.(?P<month>[0-9]{2})\.(?P<year>[0-9]{4})\s(?P<hour>[0-9]{2}):(?P<min>[0-9]{2}):(?P<sec>[0-9]{2}),(?P<msec>[0-9]*)$')
 
     def __init__(self, value):
         super(TimestampComponent, self).__init__(value)
@@ -50,7 +50,8 @@ class TimestampComponent(LogComponent):
         match = self.TIME_COMP_MATCHER.match(raw)
         if match:
             comp = match.groupdict()
-            return datetime.time(int(comp['hour']), int(comp['min']), int(comp['sec']), int(comp['msec']) * 10000)
+            msec_digits = len(comp['msec'])
+            return datetime.datetime(int(comp['year']), int(comp['month']), int(comp['day']), int(comp['hour']), int(comp['min']), int(comp['sec']), int(comp['msec']) * pow(10, 6 - msec_digits))
         else:
             _log.error("Cannot parse timestamp: '%s'" % raw)
             raise ValueError("Cannot parse timestamp: '%s'" % raw)

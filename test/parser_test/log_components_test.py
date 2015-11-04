@@ -20,14 +20,14 @@ class LogComponentTest(unittest.TestCase):
 
 class TimestampComponentTest(unittest.TestCase):
     def setUp(self):
-        self.raw = '13:51:15,37'
+        self.raw = '04.11.2015 13:51:15,37'
 
     def test_is_log_component(self):
         self.assertTrue(issubclass(TimestampComponent, LogComponent))
 
     def test_parses_timestamp_string(self):
         obj = TimestampComponent(self.raw)
-        self.assertIsInstance(obj.value, datetime.time)
+        self.assertIsInstance(obj.value, datetime.datetime)
 
     def test_fails_on_wrongly_formatted_timestamp(self):
         with self.assertRaises(ValueError):
