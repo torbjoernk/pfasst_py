@@ -1,62 +1,105 @@
-22:10:08,00 [DEFAULT   , DEBUG] logging.hpp:367 initializing custom logger 'CONTROL' as 'CONTROL'
-22:10:08,01 [DEFAULT   , DEBUG] logging.hpp:367 initializing custom logger 'COMM' as 'COMM'
-22:10:08,01 [DEFAULT   , DEBUG] logging.hpp:367 initializing custom logger 'SWEEPER' as 'SWEEPER'
-22:10:08,01 [DEFAULT   , DEBUG] logging.hpp:367 initializing custom logger 'TRANS' as 'TRANS'
-22:10:08,01 [DEFAULT   , DEBUG] logging.hpp:367 initializing custom logger 'ENCAP' as 'ENCAP'
-22:10:08,02 [DEFAULT   , DEBUG] logging.hpp:367 initializing custom logger 'QUAD' as 'QUAD'
-22:10:08,02 [DEFAULT   , DEBUG] logging.hpp:367 initializing custom logger 'USER' as 'USER'
-22:10:08,02 [DEFAULT   , INFO ] PFASST++ version v0.5.0-rc1-171-g633b1ba-dirty
-22:10:08,02 [DEFAULT   , DEBUG] logging.hpp:367 initializing custom logger 'SDC' as 'SDC'
-22:10:08,03 [SWEEPER   , INFO ] using as quadrature: Gauss-Radau (right) on [0.0, 1.0] with 3 nodes and an expected error of 2.77556e-17
-22:10:08,03 [SWEEPER   , INFO ] using as quadrature: Gauss-Radau (right) on [0.0, 1.0] with 3 nodes and an expected error of 2.77556e-17
-22:10:08,03 [SWEEPER   , INFO ] using as quadrature: Gauss-Radau (right) on [0.0, 1.0] with 3 nodes and an expected error of 2.77556e-17
-22:10:08,03 [SDC       , INFO ] 
-22:10:08,03 [SDC       , INFO ] Sequential SDC
-22:10:08,03 [SDC       , INFO ]   t0:        0.00000
-22:10:08,03 [SDC       , INFO ]   dt:        0.05000
-22:10:08,03 [SDC       , INFO ]   T:         0.05000
-22:10:08,03 [SDC       , INFO ]   num steps: 1
-22:10:08,03 [SDC       , INFO ]   max iter:  5
-22:10:08,03 [SDC       , INFO ] 
-22:10:08,03 [SDC       , INFO ] Time Step 1 of 1
-22:10:08,03 [SDC       , INFO ] 
-22:10:08,03 [SDC       , INFO ] SDC Prediction step
-22:10:08,03 [SWEEPER   , INFO ] Predicting from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
-22:10:08,03 [SWEEPER   , WARN ] No residual tolerances set. Thus skipping convergence check.
-22:10:08,03 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 2.26934e-02      |rel residual| = 3.27686e-02      |abs error| = 1.87091e-02      |rel error| = 2.70154e-02
-22:10:08,03 [SDC       , INFO ] 
-22:10:08,03 [SDC       , INFO ] Iteration 1
-22:10:08,03 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
-22:10:08,04 [SWEEPER   , WARN ] No residual tolerances set. Thus skipping convergence check.
-22:10:08,04 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 1.43951e-03      |rel residual| = 2.13269e-03      |abs error| = 1.15129e-03      |rel error| = 1.70568e-03
-22:10:08,04 [SDC       , INFO ] 
-22:10:08,04 [SDC       , INFO ] Iteration 2
-22:10:08,04 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
-22:10:08,04 [SWEEPER   , WARN ] No residual tolerances set. Thus skipping convergence check.
-22:10:08,04 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 8.30761e-05      |rel residual| = 1.23279e-04      |abs error| = 6.41265e-05      |rel error| = 9.51587e-05
-22:10:08,04 [SDC       , INFO ] 
-22:10:08,04 [SDC       , INFO ] Iteration 3
-22:10:08,04 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
-22:10:08,04 [SWEEPER   , WARN ] No residual tolerances set. Thus skipping convergence check.
-22:10:08,04 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 4.18922e-06      |rel residual| = 6.21704e-06      |abs error| = 3.33791e-06      |rel error| = 4.95365e-06
-22:10:08,04 [SDC       , INFO ] 
-22:10:08,04 [SDC       , INFO ] Iteration 4
-22:10:08,04 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
-22:10:08,04 [SWEEPER   , WARN ] No residual tolerances set. Thus skipping convergence check.
-22:10:08,04 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 1.62371e-07      |rel residual| = 2.40969e-07      |abs error| = 4.30307e-07      |rel error| = 6.38602e-07
-22:10:08,04 [SDC       , INFO ] 
-22:10:08,04 [SDC       , INFO ] Iteration 5
-22:10:08,04 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
-22:10:08,04 [SWEEPER   , WARN ] No residual tolerances set. Thus skipping convergence check.
-22:10:08,04 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 1.77604e-09      |rel residual| = 2.63576e-09      |abs error| = 3.32189e-07      |rel error| = 4.92989e-07
-22:10:08,04 [SDC       , WARN ] Not advancing to next iteration (6) as it will exceed maximum number of allowed iterations (5)
-22:10:08,04 [SDC       , WARN ] Sweeper has not yet converged and no more iterations to do.
-22:10:08,04 [SWEEPER   , INFO ] number function evaluations:
-22:10:08,04 [SWEEPER   , INFO ]   expl:        24
-22:10:08,04 [SWEEPER   , INFO ]   impl:        0
-22:10:08,04 [SWEEPER   , INFO ]   impl solves: 18
-22:10:08,04 [SDC       , INFO ] Number Iterations: 5
-22:10:08,04 [SDC       , INFO ] Absolute Residual: 1.44668e-08
-22:10:08,04 [SDC       , INFO ] Relative Residual: 1.86621e-08
-22:10:08,04 [SDC       , INFO ] End time point reached: 0.05000
-22:10:08,04 [SDC       , INFO ] Run Finished.
+13:05:37,59 [DEFAULT   , INFO ] PFASST++ version v0.5.0-rc1-172-g9634ebc-dirty
+13:05:37,67 [SWEEPER   , INFO ] using as quadrature: Gauss-Radau (right) on [0.0, 1.0] with 3 nodes and an expected error of 2.77556e-17
+13:05:37,67 [SWEEPER   , INFO ] using as quadrature: Gauss-Radau (right) on [0.0, 1.0] with 3 nodes and an expected error of 2.77556e-17
+13:05:37,55 [SWEEPER   , INFO ] using as quadrature: Gauss-Radau (right) on [0.0, 1.0] with 3 nodes and an expected error of 2.77556e-17
+13:05:37,94 [SDC       , INFO ] 
+13:05:37,94 [SDC       , INFO ] Sequential SDC
+13:05:37,94 [SDC       , INFO ]   t0:        0.00000
+13:05:37,94 [SDC       , INFO ]   dt:        0.05000
+13:05:37,94 [SDC       , INFO ]   T:         0.10000
+13:05:37,94 [SDC       , INFO ]   num steps: 2
+13:05:37,94 [SDC       , INFO ]   max iter:  20
+13:05:37,94 [SDC       , INFO ] 
+13:05:37,94 [SDC       , INFO ] Time Step 1 of 2
+13:05:37,94 [SDC       , INFO ] 
+13:05:37,94 [SDC       , INFO ] Iteration 0 (SDC Prediction)
+13:05:37,98 [SWEEPER   , INFO ] Predicting from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
+13:05:39,82 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 6.80801e-02      |rel residual| = 3.27686e-02
+13:05:39,89 [SDC       , INFO ] 
+13:05:39,89 [SDC       , INFO ] Iteration 1
+13:05:39,32 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
+13:05:40,53 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 4.31854e-03      |rel residual| = 2.13269e-03
+13:05:40,60 [SDC       , INFO ] 
+13:05:40,60 [SDC       , INFO ] Iteration 2
+13:05:40,03 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
+13:05:42,18 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 2.49228e-04      |rel residual| = 1.23279e-04
+13:05:42,25 [SDC       , INFO ] 
+13:05:42,25 [SDC       , INFO ] Iteration 3
+13:05:42,56 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
+13:05:43,73 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 1.25677e-05      |rel residual| = 6.21704e-06
+13:05:43,80 [SDC       , INFO ] 
+13:05:43,80 [SDC       , INFO ] Iteration 4
+13:05:43,26 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
+13:05:44,41 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 4.87113e-07      |rel residual| = 2.40969e-07
+13:05:44,48 [SDC       , INFO ] 
+13:05:44,48 [SDC       , INFO ] Iteration 5
+13:05:45,98 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
+13:05:46,07 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 5.32813e-09      |rel residual| = 2.63576e-09
+13:05:46,14 [SDC       , INFO ] 
+13:05:46,14 [SDC       , INFO ] Iteration 6
+13:05:46,55 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
+13:05:47,74 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 1.57130e-09      |rel residual| = 7.77304e-10
+13:05:47,82 [SDC       , INFO ] 
+13:05:47,82 [SDC       , INFO ] Iteration 7
+13:05:48,17 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
+13:05:49,29 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 2.30964e-10      |rel residual| = 1.14255e-10
+13:05:49,36 [SDC       , INFO ] 
+13:05:49,36 [SDC       , INFO ] Iteration 8
+13:05:49,82 [SWEEPER   , INFO ] Sweeping from t=0.00000 over 3 nodes to t=0.05000 (dt=0.05000)
+13:05:50,96 [SWEEPER   , INFO ]   t[3]=0.05000      |abs residual| = 2.29757e-11      |rel residual| = 1.13658e-11
+13:05:50,96 [SDC       , INFO ] Sweeper has converged.
+13:05:50,96 [SWEEPER   , INFO ] number function evaluations:
+13:05:50,96 [SWEEPER   , INFO ]   expl:        36
+13:05:50,96 [SWEEPER   , INFO ]   impl:        0
+13:05:50,96 [SWEEPER   , INFO ]   impl solves: 27
+13:05:50,96 [SDC       , INFO ] Number Iterations: 8
+13:05:50,96 [SDC       , INFO ] Absolute Residual: 2.29757e-11
+13:05:50,96 [SDC       , INFO ] Relative Residual: 1.13658e-11
+13:05:50,97 [SDC       , INFO ] 
+13:05:50,97 [SDC       , INFO ] Time Step 2 of 2
+13:05:50,97 [SDC       , INFO ] 
+13:05:50,97 [SDC       , INFO ] Iteration 0 (SDC Prediction)
+13:05:50,00 [SWEEPER   , INFO ] Predicting from t=0.05000 over 3 nodes to t=0.10000 (dt=0.05000)
+13:05:52,78 [SWEEPER   , INFO ]   t[3]=0.10000      |abs residual| = 4.58741e-02      |rel residual| = 3.27686e-02
+13:05:52,85 [SDC       , INFO ] 
+13:05:52,85 [SDC       , INFO ] Iteration 1
+13:05:52,22 [SWEEPER   , INFO ] Sweeping from t=0.05000 over 3 nodes to t=0.10000 (dt=0.05000)
+13:05:53,39 [SWEEPER   , INFO ]   t[3]=0.10000      |abs residual| = 2.90995e-03      |rel residual| = 2.13269e-03
+13:05:53,47 [SDC       , INFO ] 
+13:05:53,47 [SDC       , INFO ] Iteration 2
+13:05:53,95 [SWEEPER   , INFO ] Sweeping from t=0.05000 over 3 nodes to t=0.10000 (dt=0.05000)
+13:05:55,02 [SWEEPER   , INFO ]   t[3]=0.10000      |abs residual| = 1.67937e-04      |rel residual| = 1.23279e-04
+13:05:55,09 [SDC       , INFO ] 
+13:05:55,09 [SDC       , INFO ] Iteration 3
+13:05:55,45 [SWEEPER   , INFO ] Sweeping from t=0.05000 over 3 nodes to t=0.10000 (dt=0.05000)
+13:05:56,61 [SWEEPER   , INFO ]   t[3]=0.10000      |abs residual| = 8.46841e-06      |rel residual| = 6.21704e-06
+13:05:56,68 [SDC       , INFO ] 
+13:05:56,68 [SDC       , INFO ] Iteration 4
+13:05:56,17 [SWEEPER   , INFO ] Sweeping from t=0.05000 over 3 nodes to t=0.10000 (dt=0.05000)
+13:05:57,38 [SWEEPER   , INFO ]   t[3]=0.10000      |abs residual| = 3.28229e-07      |rel residual| = 2.40969e-07
+13:05:57,46 [SDC       , INFO ] 
+13:05:57,46 [SDC       , INFO ] Iteration 5
+13:05:58,92 [SWEEPER   , INFO ] Sweeping from t=0.05000 over 3 nodes to t=0.10000 (dt=0.05000)
+13:05:59,09 [SWEEPER   , INFO ]   t[3]=0.10000      |abs residual| = 3.59023e-09      |rel residual| = 2.63576e-09
+13:05:59,16 [SDC       , INFO ] 
+13:05:59,16 [SDC       , INFO ] Iteration 6
+13:05:59,83 [SWEEPER   , INFO ] Sweeping from t=0.05000 over 3 nodes to t=0.10000 (dt=0.05000)
+13:06:00,03 [SWEEPER   , INFO ]   t[3]=0.10000      |abs residual| = 1.05878e-09      |rel residual| = 7.77304e-10
+13:06:00,11 [SDC       , INFO ] 
+13:06:00,11 [SDC       , INFO ] Iteration 7
+13:06:01,51 [SWEEPER   , INFO ] Sweeping from t=0.05000 over 3 nodes to t=0.10000 (dt=0.05000)
+13:06:02,90 [SWEEPER   , INFO ]   t[3]=0.10000      |abs residual| = 1.55629e-10      |rel residual| = 1.14255e-10
+13:06:02,97 [SDC       , INFO ] 
+13:06:02,97 [SDC       , INFO ] Iteration 8
+13:06:02,53 [SWEEPER   , INFO ] Sweeping from t=0.05000 over 3 nodes to t=0.10000 (dt=0.05000)
+13:06:03,11 [SWEEPER   , INFO ]   t[3]=0.10000      |abs residual| = 1.54815e-11      |rel residual| = 1.13657e-11
+13:06:03,11 [SDC       , INFO ] Sweeper has converged.
+13:06:03,11 [SWEEPER   , INFO ] number function evaluations:
+13:06:03,11 [SWEEPER   , INFO ]   expl:        36
+13:06:03,11 [SWEEPER   , INFO ]   impl:        0
+13:06:03,11 [SWEEPER   , INFO ]   impl solves: 27
+13:06:03,11 [SDC       , INFO ] Number Iterations: 8
+13:06:03,11 [SDC       , INFO ] Absolute Residual: 1.54815e-11
+13:06:03,11 [SDC       , INFO ] Relative Residual: 1.13657e-11
+13:06:03,11 [SDC       , INFO ] End time point reached: 0.10000
+13:06:03,11 [SDC       , INFO ] Run Finished.

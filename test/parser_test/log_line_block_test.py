@@ -4,7 +4,7 @@
 """
 import unittest
 
-from pfasst_py.parser.log_line_block import LogLineBlock, TimeStepLogLinesBlock, IterationLogLinesBlock
+from pfasst_py.parser.log_line_block import LogLineBlock
 from pfasst_py.parser.log_line import LogLine
 
 
@@ -33,71 +33,3 @@ class LogLineBlockTest(unittest.TestCase):
 
     def test_has_prop_lines(self):
         self.assertIsInstance(self.obj.lines, list)
-
-
-class TimeStepLogLinesBlockTest(unittest.TestCase):
-    def setUp(self):
-        self.obj = TimeStepLogLinesBlock()
-
-    def test_is_log_lines_block(self):
-        self.assertTrue(issubclass(TimeStepLogLinesBlock, LogLineBlock))
-
-    def test_accepts_start_of_time_step_only_if_empty(self):
-        self.assertEqual(len(self.obj.lines), 0)
-
-        with self.assertRaises(ValueError):
-            self.obj.append_line(ITERMEDIATE_LINE)
-
-        self.obj.append_line(TIME_STEP_START_LINE)
-        self.assertEqual(len(self.obj.lines), 1)
-
-        with self.assertRaises(ValueError):
-            self.obj.append_line(TIME_STEP_START_LINE)
-
-    def test_start_of_time_step_must_match_certain_criteria(self):
-        with self.assertRaises(ValueError):
-            self.obj.append_line(DEBUG_LINE)
-
-    def test_accepts_other_lines_only_if_non_empty(self):
-        with self.assertRaises(ValueError):
-            self.obj.append_line(ITERMEDIATE_LINE)
-
-        self.obj.append_line(TIME_STEP_START_LINE)
-        self.obj.append_line(ITERMEDIATE_LINE)
-        self.assertEqual(len(self.obj.lines), 2)
-
-    def test_has_prop_time_step(self):
-        self.assertIsNone(self.obj.time_step)
-        self.obj.append_line(TIME_STEP_START_LINE)
-        self.assertEqual(self.obj.time_step, 1)
-
-    def test_has_prop_total_steps(self):
-        self.assertIsNone(self.obj.total_steps)
-        self.obj.append_line(TIME_STEP_START_LINE)
-        self.assertEqual(self.obj.total_steps, 2)
-
-
-class IterationLogLinesBlockTest(unittest.TestCase):
-    def setUp(self):
-        self.obj = IterationLogLinesBlock()
-
-    def test_start_of_time_step_must_match_certain_criteria(self):
-        with self.assertRaises(ValueError):
-            self.obj.append_line(DEBUG_LINE)
-
-    def test_accepts_start_of_time_step_only_if_empty(self):
-        self.assertEqual(len(self.obj.lines), 0)
-
-        with self.assertRaises(ValueError):
-            self.obj.append_line(ITERMEDIATE_LINE)
-
-        self.obj.append_line(ITER_START_LINE)
-        self.assertEqual(len(self.obj.lines), 1)
-
-        with self.assertRaises(ValueError):
-            self.obj.append_line(ITER_START_LINE)
-
-    def test_has_prop_iter_index(self):
-        self.assertIsNone(self.obj.iteri)
-        self.obj.append_line(ITER_START_LINE)
-        self.assertEqual(self.obj.iteri, 1)

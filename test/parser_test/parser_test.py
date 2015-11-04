@@ -15,11 +15,11 @@ class ParserTest(unittest.TestCase):
 
     def test_parses_non_mpi_file(self):
         self.obj.parse(self.filecontent)
-        self.assertEqual(len(self.obj.lines), 62)
+        self.assertEqual(len(self.obj.lines), 84)
 
     def test_parse_blocks(self):
         self.assertListEqual(self.obj.time_steps, [])
         self.obj.parse(self.filecontent)
         self.obj.parse_blocks()
-        self.assertEqual(len(self.obj.time_steps), 1)
-        self.assertEqual(len(self.obj.iterations), 5)
+        self.assertEqual(len(self.obj.time_steps), 2)
+        self.assertEqual(len(self.obj.time_steps[0].iterations), 9)
