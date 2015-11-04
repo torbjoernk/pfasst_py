@@ -5,6 +5,7 @@
 import logging
 
 from pfasst_py.parser.log_line_blocks.log_line_block import LogLineBlock
+from pfasst_py.model.time_step import TimeStep
 
 _log = logging.getLogger(__name__)
 
@@ -12,6 +13,7 @@ _log = logging.getLogger(__name__)
 class TimeStepLogLinesBlock(LogLineBlock):
     def __init__(self, initial=None):
         super(TimeStepLogLinesBlock, self).__init__(initial)
+        self._model = TimeStep()
         self._time_step = None
         self._total_steps = None
         self.iterations = []
@@ -37,3 +39,12 @@ class TimeStepLogLinesBlock(LogLineBlock):
         self._time_step = int(match.group('step'))
         self._total_steps = int(match.group('total'))
         return True
+
+    def _parse_to_model(self):
+        super(TimeStepLogLinesBlock, self)._parse_to_model()
+
+        self._model.index = self.time_step
+        self._model.total_steps = self.total_steps
+
+        for iteration in self.iterations:
+            self._model.iterations.append(iteration.to_model())

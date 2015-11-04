@@ -13,6 +13,7 @@ _log = logging.getLogger(__name__)
 class LogLineBlock(object):
     def __init__(self, initial=None):
         self._lines = []
+        self._model = None
 
         self._block_start_matcher = re.compile(self._block_start_pattern())
 
@@ -35,6 +36,10 @@ class LogLineBlock(object):
         else:
             _log.warning("Given line is not correctly parsed: %s" % line)
         return False
+
+    def to_model(self):
+        self._parse_to_model()
+        return self._model
 
     @property
     def lines(self):
@@ -66,3 +71,6 @@ class LogLineBlock(object):
 
     def _start_block_line_callback(self, match):
         return True
+
+    def _parse_to_model(self):
+        pass

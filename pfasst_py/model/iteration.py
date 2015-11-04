@@ -9,7 +9,7 @@ _log = logging.getLogger(__name__)
 
 
 class Iteration(object):
-    def __init__(self, **kwargs):
+    def __init__(self):
         self._index = None
         self._rel_res = None
         self._abs_res = None

@@ -48,7 +48,6 @@ class IterationLogLinesBlockTest(unittest.TestCase):
         self.obj = IterationLogLinesBlock([ITER_START_LINE, ITER_CONTENT_LINE])
         self.assertEqual(self.obj.iteri, 1)
         model = self.obj.to_model()
-        print(model)
         self.assertEqual(model.index, 1)
         self.assertEqual(model.timing, datetime.datetime(2015, 11, 4, 8, 8, 10, 727400) - datetime.datetime(2015, 11, 4, 8, 8, 9, 205800))
         self.assertEqual(model.abs_res, 4.31854e-3)

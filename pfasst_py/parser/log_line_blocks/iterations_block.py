@@ -22,10 +22,6 @@ class IterationLogLinesBlock(LogLineBlock):
             return super(IterationLogLinesBlock, self).is_start_of_block(line)
         return False
 
-    def to_model(self):
-        self._parse_to_model()
-        return self._model
-
     @property
     def iteri(self):
         return self._iteri
@@ -39,6 +35,8 @@ class IterationLogLinesBlock(LogLineBlock):
         return True
 
     def _parse_to_model(self):
+        super(IterationLogLinesBlock, self)._parse_to_model()
+
         self._model.index = self.iteri
         data_re = re.compile('^.*\|abs\sresidual\|\s=\s(?P<abs_res>[0-9.e-]*)\s*\|rel\sresidual\|\s=\s(?P<rel_res>[0-9.e-]*).*$')
         t_start = None
@@ -54,6 +52,3 @@ class IterationLogLinesBlock(LogLineBlock):
             t_end = line.timestamp.value
 
         self._model.timing = t_end - t_start
-
-    def __str__(self):
-        return "IterationsBlock[iteri=%s, #lines=%s]" % (self.iteri, len(self.lines))
