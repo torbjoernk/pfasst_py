@@ -4,8 +4,8 @@
 """
 import unittest
 
-from pfasst_py.parser.log_line_block import LogLineBlock
-from pfasst_py.parser.time_step_block import TimeStepLogLinesBlock
+from pfasst_py.parser.log_line_blocks.time_step_block import TimeStepLogLinesBlock
+from pfasst_py.parser.log_line_blocks.log_line_block import LogLineBlock
 from pfasst_py.parser.log_line import LogLine
 
 TIME_STEP_START_LINE = LogLine('22:10:08,03 [SDC       , INFO ] Time Step 1 of 2')

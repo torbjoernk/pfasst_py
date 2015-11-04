@@ -4,9 +4,9 @@
 """
 import logging
 
+from pfasst_py.parser.log_line_blocks.time_step_block import TimeStepLogLinesBlock
+from pfasst_py.parser.log_line_blocks.iterations_block import IterationLogLinesBlock
 from pfasst_py.parser.log_line import LogLine
-from pfasst_py.parser.time_step_block import TimeStepLogLinesBlock
-from pfasst_py.parser.iterations_block import IterationLogLinesBlock
 
 _log = logging.getLogger(__name__)
 

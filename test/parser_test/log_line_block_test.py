@@ -4,7 +4,7 @@
 """
 import unittest
 
-from pfasst_py.parser.log_line_block import LogLineBlock
+from pfasst_py.parser.log_line_blocks.log_line_block import LogLineBlock
 from pfasst_py.parser.log_line import LogLine
 
 

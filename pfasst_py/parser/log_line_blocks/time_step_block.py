@@ -4,7 +4,7 @@
 """
 import logging
 
-from pfasst_py.parser.log_line_block import LogLineBlock
+from pfasst_py.parser.log_line_blocks.log_line_block import LogLineBlock
 
 _log = logging.getLogger(__name__)
 
